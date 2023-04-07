@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React from "react"
 import './App.css';
 
 function App() {
+  const [advice, setAdvice] = React.useState('')
+  const [diceClicked, setDiceClicked] = React.useState(false)
+
+
+  function getAdvice() {
+    setDiceClicked(true)
+    fetch("https://api.adviceslip.com/advice")
+      .then(res => res.json())
+      .then(data => setAdvice(data.slip))
+  }
+  console.log(advice)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="advice-section">    {diceClicked && <p className="advice-id">Advice #{advice.id}</p>}
+        {!diceClicked && <p>Click on dice to get a free advice!!! </p>}
+        {diceClicked && <p className="advice">"{advice.advice}"</p>}</div>
+      <div className="pattern-divider"></div>
+
+      <div className="dice-box" onClick={getAdvice}><div className="dice"></div></div>
+
     </div>
   );
 }

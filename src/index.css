@@ -1,13 +1,127 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: 'Manrope', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(218, 23%, 16%);
+  max-width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 800;
 }
+
+.App {
+  width: 38vw;
+  height: 41vh;
+  background-color: hsl(217, 19%, 24%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+
+
+}
+
+.advice-section {
+  width: 100%;
+  height: 60%;
+  padding: 10px;
+  color: hsl(193, 38%, 86%)
+}
+
+.advice-id {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.5em;
+  color: hsl(150, 100%, 66%);
+  font-weight: bolder;
+}
+
+.advice {
+  margin-top: 30px;
+  font-size: 1.3em;
+}
+
+.pattern-divider {
+  background-image: url("./images/pattern-divider-desktop.svg");
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 5%;
+  background-size: contain;
+  background-position: center;
+  margin-bottom: 30px;
+}
+
+.dice-box {
+  background-color: hsl(150, 100%, 66%);
+  width: 5%;
+  height: 10%;
+  border-radius: 50%;
+  position: absolute;
+  top: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 1px soild black
+}
+
+.dice {
+  background-image: url("./images/icon-dice.svg");
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 60%;
+  background-size: contain;
+  background-position: center;
+  padding: 0;
+}
+
+.dice-box:active,
+.dice-box:focus,
+.dice-box:hover {
+  -webkit-box-shadow: -1px 1px 4px 3px hsl(150, 100%, 66%);
+  -moz-box-shadow: -1px 1px 4px 3px hsl(150, 100%, 66%);
+  box-shadow: -1px 1px 4px 3px hsl(150, 100%, 66%);
+}
+
+@media (max-width:600px) {
+  .App {
+    width: 80vw;
+    height: 50vh;
+    margin-top: -120px;
+  }
+
+  .pattern-divider {
+    background-image: url("./images/pattern-divider-mobile.svg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 5%;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .dice-box {
+    top: 60%;
+    width: 13%;
+  }
+}
+
+/* @media (max-width:500px) {
+  .dice-box {
+    top: 62%;
+    width: 13%;
+  }
+} */
+
+/* -webkit-box-shadow: -1px 1px 5px 9px hsl(150, 100%, 66%);
+-moz-box-shadow: -1px 1px 5px 9px hsl(150, 100%, 66%);
+box-shadow: -1px 1px 5px 9px hsl(150, 100%, 66%); */
